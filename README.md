@@ -1,7 +1,7 @@
 # sample-project
 sample project with nuxt js 3 framework
 
-# Figma to Code Project
+# sample web apllication
 
 This project is based on a design provided in Figma
 
