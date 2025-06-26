@@ -1,35 +1,19 @@
 <template>
-  <header class="flex flex-col px-4 py-3 bg-white shadow-sm">
-    <!-- ردیف اول -->
-    <div class="flex items-center justify-between">
-      <!-- آیکون منو -->
-      <button @click="$emit('menu')" class="text-gray-700">
-        <span class="material-symbols-outlined text-2xl">menu</span>
-      </button>
+  <div class="bg-[#0d1117] text-white min-h-screen p-4 space-y-6">
 
-      <!-- عنوان -->
-      <h1 class="text-base font-semibold text-gray-800">
-        {{ isConnected ? title : 'Connecting...' }}
-      </h1>
+    <!--connecting status -->
+    <div class="space-y-4">
+      <CardConnecting v-if="connection.isConnecting" />
 
-      <!-- آیکون سرچ -->
-      <button @click="$emit('search')" class="text-gray-700">
-        <span class="material-symbols-outlined text-2xl">search</span>
-      </button>
+      <CardConnected v-else />
     </div>
-
-    
-  </header>
+  </div>
 </template>
 
-<script setup>
-defineProps({
-  title: { type: String, default: '' },
-  statusText: { type: String, default: '' },
-  isConnected: { type: Boolean, default: true }
-})
-</script>
+<script setup lang="ts">
+import { useConnectionStore } from '~/stores/connection'
+import CardConnecting from '~/components/card-connecting.vue'
+import CardConnected from '~/components/card-connected.vue'
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
-</style>
+const connection = useConnectionStore()
+</script>
