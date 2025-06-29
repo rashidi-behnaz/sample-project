@@ -3,7 +3,7 @@
     <!-- Header -->
      <div class="relative bg-gray-900 h-24 rounded-md flex items-center justify-between">
     <div class="ml-1">
-      <IconBack class="w-5 h-5 text-white hover:cursor-pointer"  @click="goToIndex"  />
+      <IconBack @click="goToIndex"  />
     </div>
     <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-1">
       <Logo />
@@ -39,7 +39,7 @@
     <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2">
       <button
         class="w-60 py-3 bg-gray-900 rounded text-sm mx-auto hover:cursor-pointer"
-        @click="login"
+        @click="goToHome"
       >
         Login
       </button>
@@ -48,21 +48,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useAuthStore } from '~/stores/auth'
-const auth = useAuthStore();
-const router = useRouter()
+  import { ref } from 'vue'
+  import IconBack from '~/components/icons/icon-back.vue';
+  import Logo from '~/components/icons/logo.vue';
+  import { useAuthStore } from '~/stores/auth'
+  const auth = useAuthStore();
+  const router = useRouter()
 
-const password = ref('')
-const seeds = ref<string[]>(Array(12).fill(''))
+  const password = ref('')
+  const seeds = ref<string[]>(Array(12).fill(''))
 
-function login() {
-  console.log('Logging in with:', { password: password.value, seeds: seeds.value })
-}
-function goToIndex() {
-  router.push('/') 
-}
-definePageMeta({
-  layout: false
-})
+  function login() {
+    console.log('Logging in with:', { password: password.value, seeds: seeds.value })
+  }
+  function goToIndex() {
+    router.push('/') 
+  }
+   function goToHome() {
+    router.push('/home') 
+  }
+  definePageMeta({
+    layout: false
+  })
 </script>

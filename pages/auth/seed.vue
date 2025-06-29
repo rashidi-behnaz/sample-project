@@ -4,7 +4,7 @@
    <!-- Header -->
    <div class="relative bg-gray-900 h-24 rounded-md flex items-center justify-between">
     <div class="ml-1">
-      <IconBack class="w-5 h-5 text-white hover:cursor-pointer"  @click="goToIndex"  />
+      <IconBack  @click="goToIndex"  />
     </div>
     <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-1">
       <Logo />
@@ -52,14 +52,16 @@
 </template>
 
 <script setup>
-import { useAuthStore } from '~/stores/auth'
-const router = useRouter()
+  import IconBack from '~/components/icons/icon-back.vue';
+  import Logo from '~/components/icons/logo.vue';
+  import { useAuthStore } from '~/stores/auth'
+  const router = useRouter()
 
-const { seeds, generateSeeds } = useAuthStore();
-function goToIndex() {
-  router.push('/') 
-}
-definePageMeta({
-  layout: false
-})
+  const { seeds, generateSeeds } = useAuthStore();
+  function goToIndex() {
+    router.push('/') 
+  }
+  definePageMeta({
+    layout: false
+  })
 </script>

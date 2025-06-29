@@ -1,7 +1,7 @@
 <template>
-  <div class="relative bg-[#1c2331] p-4 rounded-md flex items-center justify-between">
+  <div class="relative bg-gray-700 p-4 flex items-center justify-between">
     <div>
-      <IconList class="w-5 h-5 text-white" />
+      <IconsIconList @click="toggleSidebar()" class="w-5 h-5 text-white hover:cursor-pointer" />
     </div>
 
     <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-1">
@@ -10,7 +10,13 @@
     </div>
 
     <div>
-      <IconSearch class="w-5 h-5 text-white" />
+      <IconSearch/>
     </div>
   </div>
 </template>
+<script setup>
+  import { useUiStore } from '~/stores/sidebar'
+  import Logo from './icons/logo.vue';
+  import IconSearch from './icons/icon-search.vue';
+  const { toggleSidebar } = useUiStore()
+</script>

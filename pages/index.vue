@@ -19,9 +19,9 @@
   </div>
 </template>
 <script setup>
-import SplashLogo from '~/components/splash-logo.vue';
+  import SplashLogo from '~/components/icons/splash-logo.vue';
 
-definePageMeta({
-  layout: false
-})
+  definePageMeta({
+    layout: false
+  })
 </script>
