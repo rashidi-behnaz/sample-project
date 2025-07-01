@@ -39,7 +39,7 @@
     </aside>
   </transition>
    <transition name="fade">
-    <IconNewChat
+    <IconNewChat @click="GotoProfile"
       v-if="visible"
       class="fixed bottom-4 left-[calc(75%+12px)] z-50"/>
   </transition>
@@ -52,6 +52,9 @@
       { label: 'Logout',          to: '/logout',  icon: LogoutIcon },
     ]
     const version = 'v1.0.0';
+     function goToProfile() {
+    router.push('/home/profile') 
+  }
     import { computed } from 'vue'
     import { useUiStore } from '~/stores/sidebar'
     import AccountIcon  from '~/components/icons/icon-account.vue'
