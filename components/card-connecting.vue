@@ -13,7 +13,6 @@
     </div>
   </div>
 </template>
-
 <script setup lang="ts">
   import IconList from './icons/icon-list.vue';
   import IconSearch from './icons/icon-search.vue';

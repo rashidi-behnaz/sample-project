@@ -20,7 +20,6 @@
         class="w-full bg-gray-900 p-3 rounded text-sm placeholder-gray-400 focus:outline-none"
       />
     </div>
-
     <!-- Seed Inputs -->
     <div class="p-4 m-5 rounded container mx-auto max-w-4xl">
       <label class="text-sm mb-2 block">Your seeds</label>
@@ -34,7 +33,6 @@
         />
       </div>
     </div>
-
     <!-- Login Button -->
     <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2">
       <button
@@ -46,7 +44,6 @@
     </div>
   </main>
 </template>
-
 <script setup lang="ts">
   import { ref } from 'vue'
   import IconBack from '~/components/icons/icon-back.vue';

@@ -39,21 +39,22 @@
     </aside>
   </transition>
    <transition name="fade">
-    <IconNewChat @click="GotoProfile"
+    <IconNewChat @click="goToProfile" 
       v-if="visible"
-      class="fixed bottom-4 left-[calc(75%+12px)] z-50"/>
+      class="fixed bottom-4 left-[calc(75%+12px)] z-50 hover:cursor-pointer"/>
   </transition>
 </template>
 <script setup>
-    const menu = [
+  const router = useRouter()
+  const menu = [
       { label: 'My account',      to: '/account', icon: AccountIcon },
       { label: 'My wallet',       to: '/wallet',  icon: WalletIcon },
       { label: 'About platform',  to: '/about',   icon: InfoIcon },
       { label: 'Logout',          to: '/logout',  icon: LogoutIcon },
     ]
-    const version = 'v1.0.0';
-     function goToProfile() {
-    router.push('/home/profile') 
+  const version = 'v1.0.0';
+  function goToProfile() {
+        router.push('/home/profile') 
   }
     import { computed } from 'vue'
     import { useUiStore } from '~/stores/sidebar'
